@@ -1,0 +1,6 @@
+<Project>
+	<ItemGroup>
+		<InternalsVisibleTo Include="$(AssemblyName).Test.Unit"/>
+		<InternalsVisibleTo Include="$(AssemblyName).Test.Integration"/>
+	</ItemGroup>
+</Project>

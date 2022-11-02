@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Mappings\**" />
+		<EmbeddedResource Remove="Mappings\**" />
+		<None Remove="Mappings\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="Persistence\Configurations\ApplicationRoleClaimConfiguration.cs" />
+		<Compile Remove="Persistence\Configurations\ApplicationRoleConfiguration.cs" />
+		<Compile Remove="Persistence\Configurations\ApplicationUserClaimConfiguration.cs" />
+		<Compile Remove="Persistence\Configurations\ApplicationUserConfiguration.cs" />
+		<Compile Remove="Persistence\Configurations\ApplicationUserLoginConfiguration.cs" />
+		<Compile Remove="Persistence\Configurations\ApplicationUserRoleConfiguration.cs" />
+		<Compile Remove="Persistence\Configurations\ApplicationUserTokenConfiguration.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="Mappings\StorageTypeMappingConfig.cs" />
+		<Compile Include="Mappings\StorageOrderMappingConfig.cs" />
+		<Compile Include="Mappings\CustomerMappingConfig.cs" />
+		<Compile Include="Mappings\ApplicationUserMappingConfig.cs" />
+		<Compile Include="Mappings\DataMapping.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\FrontDeskApp.Application\FrontDeskApp.Application.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.3" />
+		<PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="6.0.7" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.7" />
+		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.7" />
+		<PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.7">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.7">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="SendGrid" Version="9.28.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Migrations\" />
+	</ItemGroup>
+
+</Project>
